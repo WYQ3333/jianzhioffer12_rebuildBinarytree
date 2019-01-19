@@ -59,8 +59,8 @@ void PReorder(BinaryTreeNode * pRoot){
 		return;
 	}
 	cout << pRoot->value << " ";
-	Preorder(pRoot->left);
-	Preorder(pRoot->right);
+	PReorder(pRoot->left);
+	PReorder(pRoot->right);
 }
 
 int main(){
