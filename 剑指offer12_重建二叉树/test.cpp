@@ -47,7 +47,7 @@ BinaryTreeNode *ConstructCore(int *startPreorder, int *endPreorder,
 }
 
 
-BinaryTreeNode* Construct(int *preorder, int *inorder, int length){
+BinaryTreeNode * Construct(int *preorder, int *inorder, int length){
 	if (preorder == nullptr || inorder == nullptr || length < 0){
 		return nullptr;
 	}
@@ -55,6 +55,11 @@ BinaryTreeNode* Construct(int *preorder, int *inorder, int length){
 }
 
 int main(){
+	int Preorder[] = { 1, 2, 4, 7, 3, 5, 6, 8 };
+	int Inorder[] = { 4, 7, 2, 1, 5, 3, 8, 6 };
+	int length = 8;
+	BinaryTreeNode * root = Construct(Preorder, Inorder, length);
+
 	system("pause");
 	return 0;
 }
