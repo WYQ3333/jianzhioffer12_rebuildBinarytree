@@ -8,12 +8,7 @@ struct BinaryTreeNode{
 	BinaryTreeNode *right;
 };
 
-BinaryTreeNode* Construct(int *preorder, int *inorder, int length){
-	if (preorder == nullptr || inorder == nullptr || length < 0){
-		return nullptr;
-	}
-	return ConstructCore(preorder, preorder + length - 1, inorder, inorder + length - 1);
-}
+
 
 BinaryTreeNode *ConstructCore(int *startPreorder, int *endPreorder,
 	int *startInorder, int *endInorder){
@@ -51,3 +46,15 @@ BinaryTreeNode *ConstructCore(int *startPreorder, int *endPreorder,
 	return root;
 }
 
+
+BinaryTreeNode* Construct(int *preorder, int *inorder, int length){
+	if (preorder == nullptr || inorder == nullptr || length < 0){
+		return nullptr;
+	}
+	return ConstructCore(preorder, preorder + length - 1, inorder, inorder + length - 1);
+}
+
+int main(){
+	system("pause");
+	return 0;
+}
