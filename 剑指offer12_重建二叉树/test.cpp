@@ -53,7 +53,7 @@ BinaryTreeNode * Construct(int *preorder, int *inorder, int length){
 	}
 	return ConstructCore(preorder, preorder + length - 1, inorder, inorder + length - 1);
 }
-
+//前序遍历
 void PReorder(BinaryTreeNode * pRoot){
 	if (pRoot == nullptr){
 		return;
@@ -63,12 +63,24 @@ void PReorder(BinaryTreeNode * pRoot){
 	PReorder(pRoot->right);
 }
 
+//后序遍历
+void INeorder(BinaryTreeNode * pRoot){
+	if (pRoot == nullptr){
+		return;
+	}
+	
+	INeorder(pRoot->left);
+	cout << pRoot->value << " ";
+	INeorder(pRoot->right);
+}
 int main(){
 	int Preorder[] = { 1, 2, 4, 7, 3, 5, 6, 8 };
 	int Inorder[] = { 4, 7, 2, 1, 5, 3, 8, 6 };
 	int length = 8;
 	BinaryTreeNode * root = Construct(Preorder, Inorder, length);
 	PReorder(root);
+	cout << endl;
+	INeorder(root);
 	system("pause");
 	return 0;
 }
